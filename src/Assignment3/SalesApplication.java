@@ -17,9 +17,8 @@ public class SalesApplication {
     public SalesApplication() {
         salesSlip = new SalesSlip();
         addItemButton.addActionListener(e -> {
-            SalesItem item = new SalesItem(fieldName.getText(), Double.parseDouble(fieldCost.getText()),
-                    Integer.parseInt(fieldQuantity.getText()));
-            salesSlip.addItem(item);
+            salesSlip.addItem(new SalesItem(fieldName.getText(), Double.parseDouble(fieldCost.getText()),
+                    Integer.parseInt(fieldQuantity.getText())));
 
             outputSalesList.setText(salesSlip.toString());
             outputTotal.setText(MoneyUtil.costToString(salesSlip.getTotal()));
